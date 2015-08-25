@@ -29,8 +29,9 @@ $ npm i reliable-npm -g
 ## Usage
 
 ```javascript
-var reliableNpm = require('reliable-npm');
+var NPM = require('reliable-npm');
 
+NPM.install(path/to/install);
 ```
 
 ## License

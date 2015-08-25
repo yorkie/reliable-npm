@@ -14,11 +14,13 @@
     "lodash": "~3.10.1"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*",
-    "jshint": "*",
-    "istanbul": "*",
-    "pre-commit": "1.1.1"
+    "co": "~4.6.0",
+    "co-mocha": "~1.1.2",
+    "istanbul": "~0.3.18",
+    "jshint": "~2.8.0",
+    "mocha": "~2.2.5",
+    "pre-commit": "1.1.1",
+    "should": "~7.0.4"
   },
   "scripts": {
     "test": "make test",
@@ -29,7 +31,5 @@
   ],
   "homepage": "https://github.com/reliable/reliable-npm",
   "author": "xudafeng",
-  "email": "xudafeng@126.com",
-  "blog": "http://xdf.me",
   "license": "MIT"
 }

@@ -4,11 +4,11 @@ npm_bin= $$(npm bin)
 all: test
 install:
 	@npm install
-test: install
+test:
 	@node --harmony \
 		${npm_bin}/istanbul cover ${npm_bin}/_mocha \
 		-- \
-		--timeout 10000 \
+		--timeout 20000 \
 		--require co-mocha
 jshint:
 	@${npm_bin}/jshint .
