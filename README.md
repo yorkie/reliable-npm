@@ -9,10 +9,10 @@ reliable-npm
 
 [npm-image]: https://img.shields.io/npm/v/reliable-npm.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/reliable-npm
-[travis-image]: https://img.shields.io/travis/xudafeng/reliable-npm.svg?style=flat-square
-[travis-url]: https://travis-ci.org/xudafeng/reliable-npm
-[coveralls-image]: https://img.shields.io/coveralls/xudafeng/reliable-npm.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/xudafeng/reliable-npm?branch=master
+[travis-image]: https://img.shields.io/travis/reliablejs/reliable-npm.svg?style=flat-square
+[travis-url]: https://travis-ci.org/reliablejs/reliable-npm
+[coveralls-image]: https://img.shields.io/coveralls/reliablejs/reliable-npm.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/reliablejs/reliable-npm?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/reliable-npm.svg?style=flat-square
