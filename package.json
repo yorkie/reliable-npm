@@ -2,13 +2,16 @@
   "name": "reliable-npm",
   "version": "0.1.0",
   "description": "reliable-npm",
-  "keywords": ["reliable-npm"],
+  "keywords": [
+    "reliable-npm"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/reliable/reliable-npm.git"
   },
   "dependencies": {
+    "lodash": "~3.10.1"
   },
   "devDependencies": {
     "mocha": "*",
