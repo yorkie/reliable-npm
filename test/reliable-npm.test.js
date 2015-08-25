@@ -19,16 +19,21 @@ describe('lib/reliable-npm.js', function() {
   describe('install', function() {
     it('should be a function', function(done) {
       npm.install({
-        cwd: '..'
+        cwd: '.'
       }, function(error, data) {
         if (error) {
-          console.log(error);
           done();
           return;
         }
-        console.log(data);
+        data.should.be.Object;
         done();
       });
+    });
+    it('should be', function *() {
+      var data = yield npm.install({
+        cwd: '.'
+      });
+      console.log(data);
     });
   });
 });
