@@ -29,9 +29,51 @@ $ npm i reliable-npm -g
 ## Usage
 
 ```javascript
-var NPM = require('reliable-npm');
 
-NPM.install(path/to/install);
+// normal usage
+
+var npm = require('reliable-npm');
+
+npm.install({
+  cwd: '.',
+}, function(error, data) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  console.log(data);
+});
+
+// use in co, for a yield syntax instead of callback function implement
+
+try {
+  var data = yield npm.install({
+    cwd: '.',
+  });
+  console.log(data);
+} catch(e) {
+  // e maybe `null`
+  console.log(e);
+}
+
+// use as a promise
+
+npm.install({
+  cwd: '.'
+})
+.then(function(data) {
+  console.log(data);
+})
+.catch(function(e) {
+  console.log(e);
+});
+
+// for a custom config
+
+var NPM = require('reliable-npm').NPM;
+var npm = new NPM({
+  registry: 'https://other.npmjs.org'
+});
 ```
 
 ## License

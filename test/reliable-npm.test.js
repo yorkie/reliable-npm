@@ -16,10 +16,11 @@
 var npm = require('..');
 
 describe('lib/reliable-npm.js', function() {
-  describe('install', function() {
-    it('should be a function', function(done) {
+  describe('install()', function() {
+
+    it('should be a callback usage', function(done) {
       npm.install({
-        cwd: '..'
+        cwd: '.',
       }, function(error, data) {
         if (error) {
           console.log(error);
@@ -27,8 +28,42 @@ describe('lib/reliable-npm.js', function() {
           return;
         }
         console.log(data);
+        data.should.be.a.String;
         done();
       });
     });
+
+    it('should be a yield usage', function *(done) {
+      try {
+        var data = yield npm.install({
+          cwd: '.',
+        });
+        console.log(data);
+        data.should.be.a.String;
+      } catch(e) {
+        // e maybe null
+        if (e) {
+          e.should.be.a.String;
+        }
+      }
+      done();
+    });
+
+    it('should be a promise usage', function *(done) {
+      npm.install({
+        cwd: '.'
+      })
+      .then(function(data) {
+        console.log(data);
+        data.should.be.a.String;
+        done();
+      })
+      .catch(function(e) {
+        console.log(e);
+        e.should.be.a.String;
+        done();
+      });
+    });
+
   });
 });
