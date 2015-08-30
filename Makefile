@@ -1,5 +1,17 @@
 git_version = $$(git branch 2>/dev/null | sed -e '/^[^*]/d'-e's/* \(.*\)/\1/')
 npm_bin= $$(npm bin)
+REQUIRED = --require should
+TESTS = test
+
+BIN = iojs
+
+ifeq ($(findstring io.js, $(shell which node)),)
+	BIN = node
+endif
+
+ifeq (node, $(BIN))
+	FLAGS = --harmony-generators
+endif
 
 all: test
 install:
@@ -8,7 +20,7 @@ test: install
 	@node --harmony \
 		${npm_bin}/istanbul cover ${npm_bin}/_mocha \
 		-- \
-		--timeout 20000 \
+		--timeout 10000 \
 		--require co-mocha
 travis: install
 	@NODE_ENV=test $(BIN) $(FLAGS) \

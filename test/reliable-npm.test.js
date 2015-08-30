@@ -31,7 +31,7 @@ describe('lib/reliable-npm.js', function() {
       });
     });
 
-    it('should be a yield usage', function *(done) {
+    it('should be a yield usage', function *() {
       try {
         var data = yield npm.install({
           cwd: '.',
@@ -43,10 +43,9 @@ describe('lib/reliable-npm.js', function() {
           e.should.be.a.String;
         }
       }
-      done();
     });
 
-    it('should be a promise usage', function *(done) {
+    it('should be a promise usage', function(done) {
       npm.install({
         cwd: '.'
       })
