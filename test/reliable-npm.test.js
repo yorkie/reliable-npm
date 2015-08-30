@@ -23,11 +23,9 @@ describe('lib/reliable-npm.js', function() {
         cwd: '.',
       }, function(error, data) {
         if (error) {
-          console.log(error);
           done();
           return;
         }
-        console.log(data);
         data.should.be.a.String;
         done();
       });
@@ -38,7 +36,6 @@ describe('lib/reliable-npm.js', function() {
         var data = yield npm.install({
           cwd: '.',
         });
-        console.log(data);
         data.should.be.a.String;
       } catch(e) {
         // e maybe null
@@ -54,12 +51,10 @@ describe('lib/reliable-npm.js', function() {
         cwd: '.'
       })
       .then(function(data) {
-        console.log(data);
         data.should.be.a.String;
         done();
       })
       .catch(function(e) {
-        console.log(e);
         e.should.be.a.String;
         done();
       });
